@@ -27,14 +27,14 @@ namespace BogSimpleRestService.Controllers
 
         #endregion
 
-        // GET: api/Bøger
+        // GET: api/Boeger
         [HttpGet]
         public IEnumerable<Bog> Get()
         {
             return _bøger;
         }
 
-        // GET: api/Bøger/5
+        // GET: api/Boeger/5
         [HttpGet]
         [Route("{isbn13}")]
         public Bog Get(string isbn13)
@@ -42,14 +42,14 @@ namespace BogSimpleRestService.Controllers
             return _bøger.Find(b => b.Isbn13 == isbn13);
         }
 
-        // POST: api/Bøger
+        // POST: api/Boeger
         [HttpPost]
         public void Post([FromBody] Bog bog)
         {
             _bøger.Add(bog);
         }
 
-        // PUT: api/Bøger/5
+        // PUT: api/Boeger/5
         [HttpPut]
         [Route("{isbn13}")]
         public void Put(string isbn13, [FromBody] Bog bog)
